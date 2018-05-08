@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>      
+    <title>Random Quote Machine</title>     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="quotes.css" />      
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="quotes.js"></script> 
+</head>
+<body>  
+    
+        <div class="ui main text container">
+            <h1>Random Quote Machine</h1>                          
+                <div class="ui raised very padded text fluid container segment">                                        
+                        <div id="print-quote"></div>
+                        <div id="print-author" class="text"></div>                                              
+                </div>  
+                <div class="ui grid">
+                    <div class="two column row">
+                        <div class="right floated column">
+                            <button class="ui black button" id="next-quote">New Quote</button>
+                        </div>
+                        <div class="left floated column">                                                                                          
+                            <button class="ui circular twitter icon button right floated"                                    
+                                    id="click-to-tweet">                                            
+                                <i class="twitter icon"></i>
+                            click to tweet</button>                                                  
+                        </div>
+                    </div>
+                </div>
+        </div>            
+
+</body>
+   
+</html>
+
+
