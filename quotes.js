@@ -1,7 +1,7 @@
 
 // JQUERY WET VERSION 
 
-var quotesURL = "http://quotes.stormconsultancy.co.uk/random.json";                   
+let quotesURL = "http://quotes.stormconsultancy.co.uk/random.json";                   
 
 $(document).ready(function() {
     //preload quote
@@ -11,7 +11,7 @@ $(document).ready(function() {
 
         //click to tweet preloaded quote
         $("#click-to-tweet").on("click", function() {
-            var quoteContent = $("#print-quote").html(); 
+            let quoteContent = $("#print-quote").html(); 
             window.open("http://twitter.com/intent/tweet?url=&text=" 
             + quoteContent); 
             });       
@@ -21,9 +21,10 @@ $(document).ready(function() {
                 $.getJSON(quotesURL, function(json) {       
                     $("#print-quote").html(JSON.stringify = `${json.quote}`);
                     $("#print-author").html(JSON.stringify = "- " + `${json.author}`);
-                    //click to tweet next quote 
+
+                    //click to tweet quote 
                     $("#click-to-tweet").on("click", function() {
-                        var quoteContent = $("#print-quote").html(); 
+                        let quoteContent = $("#print-quote").html(); 
                         window.open("http://twitter.com/intent/tweet?url=&text=" 
                         + quoteContent); 
                     });                  
@@ -31,17 +32,17 @@ $(document).ready(function() {
                 })
             })       
 
-/* TESTING VANILLA JS WITH ARROW FUNC (WORKS)
+// TESTING VANILLA JS WITH ARROW FUNC (WORKS)
 
-document.querySelector("#get-another-quote")
-.onclick = () => fetch("http://quotes.stormconsultancy.co.uk/random.json")
-.then(response => response.json())
-.then(json => {
-    document.querySelector("#print-quote").innerHTML = `${json.quote}`
-}).catch(error => {
-    console.log(error)
-})
-*/
+// document.querySelector("#get-another-quote")
+// .onclick = () => fetch("http://quotes.stormconsultancy.co.uk/random.json")
+// .then(response => response.json())
+// .then(json => {
+//     document.querySelector("#print-quote").innerHTML = `${json.quote}`
+// }).catch(error => {
+//     console.log(error)
+// })
+
 
 /* TESTING VANILLA JS WITHOUT ARROW FUNC (HAS AN ERROR AT :18)
 
