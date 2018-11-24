@@ -3,13 +3,13 @@ let quotesURL = "http://quotes.stormconsultancy.co.uk/random.json";
 
 let getQuote = () => {
                     $.getJSON(quotesURL, (json) => {
-                        $("#print-quote").html(JSON.stringify = `${json.quote}`);
-                        $("#print-author").html(JSON.stringify = "- " + `${json.author}`);
+                        $("#text").html(JSON.stringify = `${json.quote}`);
+                        $("#author").html(JSON.stringify = "- " + `${json.author}`);
                         });
                     }
 
 let clickToTweet = () => { 
-                    let quoteContent = $("#print-quote").html(); 
+                    let quoteContent = $("#text").html(); 
                     window.open("http://twitter.com/intent/tweet?url=&text=" 
                     + quoteContent); 
                     };  
@@ -17,10 +17,10 @@ let clickToTweet = () => {
 $(document).ready( () => { 
     getQuote();
         //tweet quote
-        $("#click-to-tweet").on("click", clickToTweet) 
+        $("#tweet-quote").on("click", clickToTweet) 
        
         //show next quote                        
-        $("#next-quote").on("click", getQuote) 
+        $("#new-quote").on("click", getQuote) 
                       
 })       
 
